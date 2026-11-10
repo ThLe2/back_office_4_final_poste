@@ -1,0 +1,51 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Évaluation de la journée — Trois situations et un SMS</title><style>:root{--p:#8C1E70;--d:#5E1349;--l:#F4E6EE;--b:#FAF6F8;--g:#3C3C3C;--m:#8A7A85;--t:#E8DCE5;--r:#C77BAA}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--g);background:var(--b);line-height:1.5;font-size:16px}
+header{background:var(--d);color:#fff;padding:18px 24px}header .k{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--r);font-weight:700}
+header h1{margin:4px 0 0;font-size:24px}main{max-width:1100px;margin:0 auto;padding:20px 16px 40px}
+h2{color:var(--d);font-size:20px;margin:28px 0 10px;border-bottom:2px solid var(--p);padding-bottom:4px}h3{color:var(--p);font-size:17px;margin:16px 0 6px}
+.box{background:#fff;border:1px solid var(--t);border-radius:8px;padding:14px 16px;margin:12px 0}.consigne{background:var(--l);border-left:4px solid var(--p)}
+table{border-collapse:collapse;width:100%;background:#fff;margin:8px 0}th{background:var(--d);color:#fff;text-align:left;padding:8px;font-size:14px}td{border:1px solid var(--t);padding:8px;vertical-align:top;font-size:14px}
+tr:nth-child(even) td{background:var(--b)}footer{text-align:center;font-size:12px;color:var(--m);padding:16px}
+button{font-family:inherit;cursor:pointer}.btn{background:var(--p);color:#fff;border:0;border-radius:6px;padding:9px 16px;font-size:15px}.btn:disabled{opacity:.5;cursor:default}
+.doc{background:#fff;border:1px solid var(--t);border-radius:8px;padding:16px;font-size:15px;margin:12px 0}
+.mailh{border-bottom:2px solid var(--g);margin-bottom:10px;padding-bottom:6px}.mailh div{margin:2px 0}.mailh b{display:inline-block;width:60px;background:var(--t);text-align:center;border-radius:4px;margin-right:8px;font-weight:400}
+.sms{background:#E8DCE5;border-radius:16px 16px 16px 2px;padding:12px;max-width:420px}
+.fiche{border:2px solid var(--g);border-radius:6px;overflow:hidden;background:#fff}.fiche .t{background:var(--g);color:#fff;font-weight:700;padding:6px 10px;letter-spacing:1px}
+.fiche .z{padding:8px 12px;border-top:1px solid var(--t)}.fiche .z b{color:var(--d)}
+.note{background:#FFF8E1;border:1px solid #E0C36A;border-radius:8px;padding:10px 12px;margin:12px 0;font-size:15px}
+.aide{background:var(--l);border-radius:8px;padding:10px 12px;margin-top:10px;font-size:15px}
+.chrono{font-size:24px;font-weight:700;color:var(--d);font-variant-numeric:tabular-nums}.lr{text-align:right}
+details{background:#fff;border:1px solid var(--t);border-radius:8px;margin:10px 0}details>summary{cursor:pointer;padding:10px 14px;font-weight:700;color:var(--d)}
+details>div{padding:0 14px 12px}ul.plan{margin:0;padding-left:20px}ul.plan li{margin:4px 0}
+.calc td:last-child{text-align:right;white-space:nowrap}.calc tr.tot td{font-weight:700;background:var(--l)}</style></head><body><header><div class="k">Back Office 4 · Gérer le suivi d’un dossier client unique sur plusieurs canaux</div><h1>Évaluation de la journée — Trois situations et un SMS</h1></header><main>
+<div class="box consigne">Le dossier Technica Distribution continue. Vous traitez <b>trois situations</b> dans l’ordre, puis un <b>SMS</b>. Vous disposez d’<b>1 h 20</b> au total. Les montants doivent être exacts : reprenez ce qui a été réservé, l’acompte versé et la remise accordée.</div>
+<div class="box" style="display:flex;gap:16px;align-items:center;flex-wrap:wrap"><div>Temps indicatif : <b>1 h 20</b>. Le chronomètre vous aide à gérer votre temps ; il ne bloque rien.</div><div class="chrono" id="ch" aria-live="off"></div><button class="btn" id="go">Démarrer le chronomètre</button></div><script>let t=4800;const ch=document.getElementById("ch");function aff(){const a=Math.abs(t),h=Math.floor(a/3600),mn=Math.floor(a%3600/60),s=a%60;ch.textContent=(t<0?"-":"")+(h?h+":"+String(mn).padStart(2,"0"):mn)+":"+String(s).padStart(2,"0");if(t<0)ch.style.color="#C62828";}aff();document.getElementById("go").onclick=function(){this.disabled=true;this.textContent="Chronomètre lancé";setInterval(()=>{t--;aff();},1000);};</script>
+<h2>Situation A — Deux participants de plus</h2>
+<p>Rappel : M. Arnout a réservé pour 14 personnes ; vous lui avez accordé une remise de 5 % et il a versé un acompte de 892,05 €.</p>
+<div class="doc"><div class="mailh"><div><b>Le</b>15 juin</div><div><b>De</b>t.arnout@technica.com</div><div><b>À</b>omahabeachgolfclub@sfr.fr</div><div><b>Objet</b>Séminaire de septembre — participants</div></div><p>Bonjour,</p><p>Deux collaborateurs supplémentaires se joignent à nous : nous serons donc 16. Ils suivront le même programme que les autres, logés en chambre simple, mais ne joueront pas au golf.</p><p>Pouvez-vous m’indiquer le nouveau montant et ce que je dois vous verser en plus ?</p><p>Cordialement,</p><p>Thierry Arnout</p></div>
+<p class="aide"><b>À faire :</b> répondez par courriel le 16 juin. Donnez le nouveau montant, remise de 5 % maintenue, et le complément d’acompte à verser.</p>
+<h2>Situation B — Une annulation envisagée</h2>
+<div class="doc"><div class="mailh"><div><b>Le</b>30 août</div><div><b>De</b>t.arnout@technica.com</div><div><b>À</b>omahabeachgolfclub@sfr.fr</div><div><b>Objet</b>Annulation ?</div></div><p>Bonjour,</p><p>Une réunion importante vient d’être fixée chez un client le 8 septembre. J’envisage d’annuler notre séminaire. Pouvez-vous me confirmer que l’acompte me sera remboursé ?</p><p>Cordialement,</p><p>Thierry Arnout</p></div>
+<p class="aide"><b>À faire :</b> répondez par courriel le jour même. Rappelez avec tact ce que prévoient les conditions générales de vente, chiffrez ce que coûterait l’annulation, et cherchez à préserver le séminaire.</p>
+<h2>Situation C — La confirmation finale</h2>
+<p>M. Arnout a versé le complément d’acompte le 17 juin. Le 2 septembre, il vous téléphone : il maintient le séminaire, pour 16 personnes, aux dates prévues.</p>
+<p class="aide"><b>À faire :</b> confirmez-lui par lettre, le 3 septembre, le programme du séjour et le montant du solde qu’il réglera à son arrivée.</p>
+<h2>SMS — La veille de l’arrivée</h2>
+<div class="doc"><p>Le 7 septembre, vous envoyez un SMS à M. Arnout (06 45 18 72 30) pour lui rappeler l’arrivée du groupe le lendemain à 10 h et lui souhaiter la bienvenue au Golf Omaha Beach.</p>
+<p class="aide"><b>Rédigez ce SMS en 150 à 160 caractères, espaces compris.</b> Soyez convivial(e). Indiquez le nombre de caractères à la fin de votre réponse.</p></div>
+<h2>Le dossier Golf Omaha Beach</h2><details><summary>Annexe 1 — Tarifs hôtel-séminaire (Mercure Omaha Beach)</summary><div>
+<table><thead><tr><th>Prestation</th><th>Du 1er janvier au 31 mars et du 1er novembre au 31 décembre</th><th>Du 1er avril au 31 octobre</th></tr></thead><tbody>
+<tr><td><b>Le Résidentiel</b><br>La chambre, le petit déjeuner, 2 pauses gourmandes, le déjeuner et le dîner (boissons incluses)</td><td>145 € par personne en chambre single<br>130 € par personne en chambre twin</td><td>170 € par personne en chambre single<br>150 € par personne en chambre twin</td></tr>
+<tr><td><b>Le ½ Résidentiel</b><br>La chambre, le petit déjeuner, 2 pauses gourmandes, le déjeuner OU le dîner (boissons incluses)</td><td>130 € par personne en chambre single<br>115 € par personne en chambre twin</td><td>150 € par personne en chambre single<br>130 € par personne en chambre twin</td></tr>
+<tr><td><b>La journée d’étude</b><br>2 pauses gourmandes, le déjeuner</td><td>55 € par personne</td><td>60 € par personne</td></tr></tbody></table>
+<p>Nos tarifs comprennent la location de la salle de réunion (salle modulable équipée d’un écran géant tactile, d’un vidéoprojecteur et du Wi-Fi haut débit) et l’accès gratuit aux installations de bien-être : hammam, sauna, tennis, piscine extérieure chauffée (du 1er juin au 30 septembre), salle de remise en forme, spa.</p></div></details><details><summary>Tarifs golf retenus pour ce dossier</summary><div>
+<table><thead><tr><th>Prestation</th><th>Tarif</th></tr></thead><tbody>
+<tr><td>Green-fee 9 trous</td><td>60 € par joueur</td></tr><tr><td>Location d’un chariot manuel</td><td>7 € par chariot</td></tr></tbody></table>
+<p><small>Les tarifs du site du golf peuvent évoluer : pour ce dossier, retenez ceux-ci.</small></p></div></details><details><summary>Annexe 2 — Extrait des conditions générales de vente (hôtel-séminaire)</summary><div>
+<ul><li>La réservation est effective lorsque le client a versé un acompte. Le solde du séjour est versé le jour de l’arrivée.</li>
+<li>L’acompte est de 25 % du montant du séjour. Il n’est pas remboursé en cas d’annulation.</li>
+<li>En cas d’annulation moins de 15 jours avant la date d’arrivée, ou en cas de non-présentation, le montant total du séjour est dû.</li>
+<li>Le versement de l’acompte vaut acceptation des conditions générales.</li></ul></div></details><details><summary>Le complexe Golf Omaha Beach</summary><div>
+<p>Vous êtes chargé(e) de clientèle à distance pour le complexe <b>Golf Omaha Beach</b>. Vous répondez à toutes les demandes de vos interlocuteurs, clients ou prospects. Assurez-vous d’avoir tous les éléments avant de rédiger vos réponses.</p>
+<p>Niché au cœur des plages du Débarquement en Normandie, le golf Omaha Beach propose deux parcours de 18 trous dans un environnement exceptionnel. La clientèle est composée de membres à l’année et de joueurs ponctuels, qui s’acquittent de « green-fees ». Le complexe est partenaire d’un hôtel-restaurant, le Mercure Omaha Beach, et accueille des séminaires la semaine et le week-end.</p>
+<p>Golf Omaha Beach<br>La Ferme Saint Sauveur<br>14520 Port-en-Bessin<br>www.golfomahabeach.fr · omahabeachgolfclub@sfr.fr<br>Tél. : 02 31 22 12 12</p></div></details><div class="box consigne"><b>Pour répondre</b> — Ce dossier reste affiché à côté des questions du LMS : vous pouvez le masquer et le réafficher à tout moment, le chronomètre continue de tourner. Rédigez votre réponse dans le LMS.</div></main><footer>TMK Performances - N° Siret : 49841924100027 - Code NAF : 8559A</footer></body></html>
